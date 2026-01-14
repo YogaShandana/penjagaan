@@ -25,16 +25,15 @@ class Ims extends Model
             if (empty($ims->qr_token)) {
                 $ims->qr_token = Str::uuid();
             }
-            // Generate QR code with token - use generateQrCodeFromData
-            $data = "IMS Token: {$ims->qr_token}\nNama Post: {$ims->nama_post}\nNomor Urut: {$ims->nomor_urut}\nRole: {$ims->role_type}";
-            $ims->qr_code = base64_encode(QrCode::format('svg')->size(200)->generate($data));
+            // Generate QR code with only the token (simple and scannable)
+            $ims->qr_code = base64_encode(QrCode::format('svg')->size(200)->generate($ims->qr_token));
         });
     }
 
     public function generateQrCode()
     {
-        $data = "IMS Token: {$this->qr_token}\nNama Post: {$this->nama_post}\nNomor Urut: {$this->nomor_urut}\nRole: {$this->role_type}";
-        return base64_encode(QrCode::format('svg')->size(200)->generate($data));
+        // Generate QR code with only the token
+        return base64_encode(QrCode::format('svg')->size(200)->generate($this->qr_token));
     }
 
     public function regenerateQrCode()

@@ -21,17 +21,19 @@ class Mjs extends Model
         parent::boot();
         
         static::creating(function ($mjs) {
-            // Generate unique token for QR
-            $mjs->qr_token = Str::uuid();
-            // Generate QR code with token
-            $mjs->qr_code = $mjs->generateQrCode();
+            // Generate unique token for QR only if not already set
+            if (empty($mjs->qr_token)) {
+                $mjs->qr_token = Str::uuid();
+            }
+            // Generate QR code with only the token (simple and scannable)
+            $mjs->qr_code = base64_encode(QrCode::format('svg')->size(200)->generate($mjs->qr_token));
         });
     }
 
     public function generateQrCode()
     {
-        $data = "MJS Token: {$this->qr_token}\nNama Post: {$this->nama_post}\nNomor Urut: {$this->nomor_urut}\nRole: {$this->role_type}";
-        return base64_encode(QrCode::format('svg')->size(200)->generate($data));
+        // Generate QR code with only the token
+        return base64_encode(QrCode::format('svg')->size(200)->generate($this->qr_token));
     }
 
     public function regenerateQrCode()
