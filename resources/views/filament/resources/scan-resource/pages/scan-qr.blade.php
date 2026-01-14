@@ -247,8 +247,6 @@
         
         .camera-feed {
             height: 300px;
-            transform: scaleX(-1);
-            -webkit-transform: scaleX(-1);
         }
         
         /* Mobile Responsive */
