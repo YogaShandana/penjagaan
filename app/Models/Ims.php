@@ -21,10 +21,13 @@ class Ims extends Model
         parent::boot();
         
         static::creating(function ($ims) {
-            // Generate unique token for QR
-            $ims->qr_token = Str::uuid();
-            // Generate QR code with token
-            $ims->qr_code = $ims->generateQrCode();
+            // Generate unique token for QR only if not already set
+            if (empty($ims->qr_token)) {
+                $ims->qr_token = Str::uuid();
+            }
+            // Generate QR code with token - use generateQrCodeFromData
+            $data = "IMS Token: {$ims->qr_token}\nNama Post: {$ims->nama_post}\nNomor Urut: {$ims->nomor_urut}\nRole: {$ims->role_type}";
+            $ims->qr_code = base64_encode(QrCode::format('svg')->size(200)->generate($data));
         });
     }
 
