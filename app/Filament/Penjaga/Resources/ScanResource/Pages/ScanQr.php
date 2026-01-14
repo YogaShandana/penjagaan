@@ -203,11 +203,14 @@ class ScanQr extends Page
                   ->where('role_type', 'penjaga')  // SECURITY: Hanya QR penjaga!
                   ->first();
         if ($ims) {
-            // Validasi nomor urut
-            $lastScan = Scan::where('user_id', Auth::id())
-                ->where('scanned_type', 'ims')
-                ->where('status', 'valid')
-                ->orderBy('created_at', 'desc')
+            // Validasi nomor urut (hanya untuk role penjaga)
+            $lastScan = Scan::where('scans.user_id', Auth::id())
+                ->where('scans.scanned_type', 'ims')
+                ->where('scans.status', 'valid')
+                ->join('ims', 'scans.scanned_id', '=', 'ims.id')
+                ->where('ims.role_type', 'penjaga')
+                ->orderBy('scans.created_at', 'desc')
+                ->select('scans.*')
                 ->first();
 
             // Cek total nomor urut maksimum di IMS (hanya untuk role penjaga)
@@ -344,11 +347,14 @@ class ScanQr extends Page
                   ->where('role_type', 'penjaga')  // SECURITY: Hanya QR penjaga!
                   ->first();
         if ($mjs) {
-            // Validasi nomor urut
-            $lastScan = Scan::where('user_id', Auth::id())
-                ->where('scanned_type', 'mjs')
-                ->where('status', 'valid')
-                ->orderBy('created_at', 'desc')
+            // Validasi nomor urut (hanya untuk role penjaga)
+            $lastScan = Scan::where('scans.user_id', Auth::id())
+                ->where('scans.scanned_type', 'mjs')
+                ->where('scans.status', 'valid')
+                ->join('mjs', 'scans.scanned_id', '=', 'mjs.id')
+                ->where('mjs.role_type', 'penjaga')
+                ->orderBy('scans.created_at', 'desc')
+                ->select('scans.*')
                 ->first();
 
             // Cek total nomor urut maksimum di MJS (hanya untuk role penjaga)
