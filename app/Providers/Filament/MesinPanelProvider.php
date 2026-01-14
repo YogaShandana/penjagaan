@@ -25,7 +25,7 @@ class MesinPanelProvider extends PanelProvider
         return $panel
             ->id('mesin')
             ->path('mesin')
-            ->login()
+            ->login(\App\Filament\Mesin\Pages\Auth\Login::class)
             ->brandName('Mesin')
             ->colors([
                 'primary' => Color::Blue,

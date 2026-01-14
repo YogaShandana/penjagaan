@@ -25,7 +25,7 @@ class PenjagaPanelProvider extends PanelProvider
         return $panel
             ->id('penjaga')
             ->path('penjaga')
-            ->login()
+            ->login(\App\Filament\Penjaga\Pages\Auth\Login::class)
             ->brandName('Penjaga')
             ->colors([
                 'primary' => Color::Blue,
