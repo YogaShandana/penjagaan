@@ -21,24 +21,51 @@ class UserSeeder extends Seeder
 
         // Create admin user
         User::create([
-            'name' => 'admin',
-            'email' => 'admin@admin.com',
+            'name' => 'ADMIN',
+            'email' => 'admin@scan',
             'password' => Hash::make('password'),
             'role_id' => $adminRole->id,
         ]);
 
-        // Create penjagaan user
+        // Create mesin users
         User::create([
-            'name' => 'Penjaga',
-            'email' => 'penjaga@penjaga.com',
+            'name' => 'MARGUNA',
+            'email' => 'marguna@scan',
             'password' => Hash::make('password'),
-            'role_id' => $penjagaanRole->id,
+            'role_id' => $mesinRole->id,
         ]);
 
-        // Create mesin user
         User::create([
-            'name' => 'Mesin',
-            'email' => 'mesin@mesin.com',
+            'name' => 'SOIM',
+            'email' => 'soim@scan',
+            'password' => Hash::make('password'),
+            'role_id' => $mesinRole->id,
+        ]);
+
+        User::create([
+            'name' => 'PARTHAGUNA',
+            'email' => 'parthaguna@scan',
+            'password' => Hash::make('password'),
+            'role_id' => $mesinRole->id,
+        ]);
+
+        User::create([
+            'name' => 'BAYU',
+            'email' => 'bayu@scan',
+            'password' => Hash::make('password'),
+            'role_id' => $mesinRole->id,
+        ]);
+
+        User::create([
+            'name' => 'RESA',
+            'email' => 'resa@scan',
+            'password' => Hash::make('password'),
+            'role_id' => $mesinRole->id,
+        ]);
+
+        User::create([
+            'name' => 'LIWA',
+            'email' => 'liwa@scan',
             'password' => Hash::make('password'),
             'role_id' => $mesinRole->id,
         ]);
