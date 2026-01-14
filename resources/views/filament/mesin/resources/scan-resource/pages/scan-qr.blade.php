@@ -243,8 +243,6 @@
         .camera-video {
             height: 300px;
             object-fit: cover;
-            transform: scaleX(-1);
-            -webkit-transform: scaleX(-1);
         }
         
         .camera-feed {
