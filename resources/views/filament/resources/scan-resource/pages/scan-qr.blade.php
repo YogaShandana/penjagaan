@@ -223,8 +223,6 @@
             background-color: #000;
             min-height: 300px;
             height: 300px;
-            transform: scaleX(-1);
-            -webkit-transform: scaleX(-1);
         }
         
         #camera-container {
