@@ -210,8 +210,8 @@ class ScanQr extends Page
                 ->orderBy('created_at', 'desc')
                 ->first();
 
-            // Cek total nomor urut maksimum di IMS
-            $maxNomorUrut = Ims::max('nomor_urut');
+            // Cek total nomor urut maksimum di IMS (hanya untuk role mesin)
+            $maxNomorUrut = Ims::where('role_type', 'mesin')->max('nomor_urut');
 
             $expectedNomorUrut = 1; // Default mulai dari 1
             if ($lastScan) {
@@ -351,8 +351,8 @@ class ScanQr extends Page
                 ->orderBy('created_at', 'desc')
                 ->first();
 
-            // Cek total nomor urut maksimum di MJS
-            $maxNomorUrut = Mjs::max('nomor_urut');
+            // Cek total nomor urut maksimum di MJS (hanya untuk role mesin)
+            $maxNomorUrut = Mjs::where('role_type', 'mesin')->max('nomor_urut');
 
             $expectedNomorUrut = 1; // Default mulai dari 1
             if ($lastScan) {
