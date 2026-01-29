@@ -22,58 +22,58 @@ class UserSeeder extends Seeder
         // Create admin user
         User::create([
             'name' => 'ADMIN',
-            'email' => 'admin@scan',
-            'password' => Hash::make('password'),
+            'email' => 'admin@admin',
+            'password' => Hash::make('admin'),
             'role_id' => $adminRole->id,
         ]);
 
         // Create mesin users
         User::create([
             'name' => 'MARGUNA',
-            'email' => 'marguna@scan',
-            'password' => Hash::make('password'),
+            'email' => 'marguna@mesin',
+            'password' => Hash::make('mesin'),
             'role_id' => $mesinRole->id,
         ]);
 
         User::create([
             'name' => 'SOIM',
-            'email' => 'soim@scan',
-            'password' => Hash::make('password'),
+            'email' => 'soim@mesin',
+            'password' => Hash::make('mesin'),
             'role_id' => $mesinRole->id,
         ]);
 
         User::create([
             'name' => 'PARTHAGUNA',
-            'email' => 'parthaguna@scan',
-            'password' => Hash::make('password'),
+            'email' => 'parthaguna@mesin',
+            'password' => Hash::make('mesin'),
             'role_id' => $mesinRole->id,
         ]);
 
         User::create([
             'name' => 'BAYU',
-            'email' => 'bayu@scan',
-            'password' => Hash::make('password'),
+            'email' => 'bayu@mesin',
+            'password' => Hash::make('mesin'),
             'role_id' => $mesinRole->id,
         ]);
 
         User::create([
             'name' => 'RESA',
-            'email' => 'resa@scan',
-            'password' => Hash::make('password'),
+            'email' => 'resa@mesin',
+            'password' => Hash::make('mesin'),
             'role_id' => $mesinRole->id,
         ]);
 
         User::create([
             'name' => 'LIWA',
-            'email' => 'liwa@scan',
-            'password' => Hash::make('password'),
+            'email' => 'liwa@mesin',
+            'password' => Hash::make('mesin'),
             'role_id' => $mesinRole->id,
         ]);
 
         User::create([
             'name' => 'SUWITRA',
-            'email' => 'suwitra@scan',  
-            'password' => Hash::make('password'),
+            'email' => 'suwitra@mesin',  
+            'password' => Hash::make('mesin'),
             'role_id' => $mesinRole->id,
         ]);
     }
