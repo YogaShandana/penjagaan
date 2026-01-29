@@ -76,5 +76,97 @@ class UserSeeder extends Seeder
             'password' => Hash::make('mesin'),
             'role_id' => $mesinRole->id,
         ]);
+
+        // Create penjaga users
+        User::create([
+            'name' => 'SIUS',
+            'email' => 'sius@penjaga',
+            'password' => Hash::make('penjaga'),
+            'role_id' => $penjagaanRole->id,
+        ]);
+
+        User::create([
+            'name' => 'SEBASTIAN',
+            'email' => 'sebastian@penjaga',
+            'password' => Hash::make('penjaga'),
+            'role_id' => $penjagaanRole->id,
+        ]);
+
+        User::create([
+            'name' => 'DARMA',
+            'email' => 'darma@penjaga',
+            'password' => Hash::make('penjaga'),
+            'role_id' => $penjagaanRole->id,
+        ]);
+
+        User::create([
+            'name' => 'CARITA',
+            'email' => 'carita@penjaga',
+            'password' => Hash::make('penjaga'),
+            'role_id' => $penjagaanRole->id,
+        ]);
+
+        User::create([
+            'name' => 'UTAMA',
+            'email' => 'utama@penjaga',
+            'password' => Hash::make('penjaga'),
+            'role_id' => $penjagaanRole->id,
+        ]);
+
+        User::create([
+            'name' => 'LORENSIUS',
+            'email' => 'lorensius@penjaga',
+            'password' => Hash::make('penjaga'),
+            'role_id' => $penjagaanRole->id,
+        ]);
+
+        User::create([
+            'name' => 'ALDI',
+            'email' => 'aldi@penjaga',
+            'password' => Hash::make('penjaga'),
+            'role_id' => $penjagaanRole->id,
+        ]);
+
+        User::create([
+            'name' => 'MAHARDIKA',
+            'email' => 'mahardika@penjaga',
+            'password' => Hash::make('penjaga'),
+            'role_id' => $penjagaanRole->id,
+        ]);
+
+        User::create([
+            'name' => 'YULEX',
+            'email' => 'yulex@penjaga',
+            'password' => Hash::make('penjaga'),
+            'role_id' => $penjagaanRole->id,
+        ]);
+
+        User::create([
+            'name' => 'YOHANES',
+            'email' => 'yohanes@penjaga',
+            'password' => Hash::make('penjaga'),
+            'role_id' => $penjagaanRole->id,
+        ]);
+
+        User::create([
+            'name' => 'MERTA',
+            'email' => 'merta@penjaga',
+            'password' => Hash::make('penjaga'),
+            'role_id' => $penjagaanRole->id,
+        ]);
+
+        User::create([
+            'name' => 'ANDRE',
+            'email' => 'andre@penjaga',
+            'password' => Hash::make('penjaga'),
+            'role_id' => $penjagaanRole->id,
+        ]);
+
+        User::create([
+            'name' => 'ARTAWAN',
+            'email' => 'artawan@penjaga',
+            'password' => Hash::make('penjaga'),
+            'role_id' => $penjagaanRole->id,
+        ]);
     }
 }
