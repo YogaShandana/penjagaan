@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import './filament-mobile.css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -8,4 +9,113 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+/* Filament Mobile Responsive Fixes */
+@media (max-width: 768px) {
+    /* Fix table overflow */
+    .fi-ta-table-container {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Better table scrolling */
+    .fi-ta {
+        min-width: 100%;
+    }
+    
+    /* Adjust padding for mobile */
+    .fi-main {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    
+    /* Fix header on mobile */
+    .fi-header {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    
+    /* Fix form sections */
+    .fi-fo-field-wrp {
+        width: 100% !important;
+    }
+    
+    /* Fix modal on mobile */
+    .fi-modal {
+        width: 95vw !important;
+        max-width: 95vw !important;
+        margin: 0.5rem !important;
+    }
+    
+    /* Fix action buttons overflow */
+    .fi-ta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    /* Fix stats grid */
+    .fi-wi-stats-overview-stat {
+        min-width: 100% !important;
+    }
+    
+    /* Fix sidebar on mobile */
+    .fi-sidebar {
+        width: 100% !important;
+    }
+    
+    /* Better font sizes for mobile */
+    .fi-header-heading {
+        font-size: 1.25rem !important;
+    }
+    
+    /* Fix navigation */
+    .fi-sidebar-nav {
+        padding: 0.5rem !important;
+    }
+}
+
+/* Tablet responsive */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .fi-main {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* Ensure tables are always scrollable on small screens */
+@media (max-width: 1024px) {
+    .fi-ta-ctn {
+        overflow-x: auto !important;
+    }
+    
+    /* Fix dropdown menus positioning */
+    .fi-dropdown-panel {
+        position: fixed !important;
+        max-width: 90vw !important;
+    }
+}
+
+/* Fix for very small screens */
+@media (max-width: 480px) {
+    /* Smaller padding */
+    .fi-section-content {
+        padding: 0.75rem !important;
+    }
+    
+    /* Stack buttons vertically if needed */
+    .fi-ac-group {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    
+    .fi-ac-group .fi-btn {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+    
+    /* Better input fields */
+    .fi-input {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+    }
 }

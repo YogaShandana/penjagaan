@@ -1,0 +1,158 @@
+/* Filament Admin Panel Mobile Responsive Fixes */
+
+/* Mobile Breakpoint (max-width: 640px) */
+@media (max-width: 640px) {
+    /* Dashboard Cards - Stack vertically on mobile */
+    .space-y-6 > div.grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Better card sizing for mobile */
+    .space-y-6 a.rounded-lg,
+    .space-y-6 > div > div.rounded-lg {
+        min-height: auto;
+        padding: 1rem !important;
+    }
+    
+    /* Icon container size adjustment */
+    .bg-purple-100,
+    .bg-green-100,
+    .bg-blue-100,
+    .bg-yellow-100,
+    .bg-orange-100 {
+        padding: 0.625rem !important;
+    }
+    
+    /* SVG icons smaller on mobile */
+    svg.w-6 {
+        width: 1.25rem !important;
+        height: 1.25rem !important;
+    }
+    
+    /* Text sizing for better readability */
+    h3 {
+        font-size: 0.9375rem !important;
+    }
+    
+    p.text-sm {
+        font-size: 0.8125rem !important;
+    }
+    
+    /* Stats font size adjustment */
+    .text-2xl {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Filament table responsive */
+    .fi-ta-table-container {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Main container padding */
+    .fi-main {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    
+    /* Header padding */
+    .fi-header {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    
+    /* Form fields full width */
+    .fi-fo-field-wrp {
+        width: 100% !important;
+    }
+    
+    /* Modal sizing for mobile */
+    .fi-modal {
+        width: 95vw !important;
+        max-width: 95vw !important;
+        margin: 0.5rem !important;
+    }
+    
+    /* Action buttons wrap on mobile */
+    .fi-ta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    /* Stats grid */
+    .fi-wi-stats-overview-stat {
+        min-width: 100% !important;
+    }
+    
+    /* Sidebar full width on mobile */
+    .fi-sidebar {
+        width: 100% !important;
+    }
+    
+    /* Better header font size */
+    .fi-header-heading {
+        font-size: 1.25rem !important;
+    }
+    
+    /* Navigation padding */
+    .fi-sidebar-nav {
+        padding: 0.5rem !important;
+    }
+}
+
+/* Tablet view (640px - 1024px) */
+@media (min-width: 640px) and (max-width: 1024px) {
+    /* 2 columns for tablet */
+    .grid.lg\:grid-cols-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    
+    /* Main padding adjustment */
+    .fi-main {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* Ensure tables are scrollable on all small screens */
+@media (max-width: 1024px) {
+    .fi-ta-ctn {
+        overflow-x: auto !important;
+    }
+    
+    /* Dropdown menu positioning fix */
+    .fi-dropdown-panel {
+        position: fixed !important;
+        max-width: 90vw !important;
+    }
+}
+
+/* Very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Even smaller padding */
+    .fi-section-content {
+        padding: 0.75rem !important;
+    }
+    
+    /* Stack action buttons vertically */
+    .fi-ac-group {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    
+    .fi-ac-group .fi-btn {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+    
+    /* Prevent iOS zoom on input focus */
+    .fi-input,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+}
