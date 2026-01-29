@@ -31,6 +31,9 @@ class MesinPanelProvider extends PanelProvider
                 'primary' => Color::Blue,
             ])
             ->darkMode(false)
+            ->sidebarCollapsibleOnDesktop()
+            ->maxContentWidth('full')
+            ->font('Inter')
             ->discoverResources(in: app_path('Filament/Mesin/Resources'), for: 'App\\Filament\\Mesin\\Resources')
             ->discoverPages(in: app_path('Filament/Mesin/Pages'), for: 'App\\Filament\\Mesin\\Pages')
             ->pages([

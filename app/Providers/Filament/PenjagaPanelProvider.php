@@ -31,6 +31,9 @@ class PenjagaPanelProvider extends PanelProvider
                 'primary' => Color::Blue,
             ])
             ->darkMode(false)
+            ->sidebarCollapsibleOnDesktop()
+            ->maxContentWidth('full')
+            ->font('Inter')
             ->discoverResources(in: app_path('Filament/Penjaga/Resources'), for: 'App\\Filament\\Penjaga\\Resources')
             ->discoverPages(in: app_path('Filament/Penjaga/Pages'), for: 'App\\Filament\\Penjaga\\Pages')
             ->pages([
