@@ -32,6 +32,7 @@ class RekapanResource extends Resource
             ->withoutGlobalScopes([
                 SoftDeletingScope::class,
             ])
+            ->where('user_id', auth()->id())
             ->where(function (Builder $query) {
                 $query->where(function (Builder $subQuery) {
                     $subQuery->where('scanned_type', 'ims')
@@ -85,6 +86,10 @@ class RekapanResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('user.name')
+                    ->label('Nama Mesin')
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('area')
                     ->label('Area')
                     ->getStateUsing(fn ($record) => $record->scanned_type ? strtoupper($record->scanned_type) : 'UNKNOWN')
