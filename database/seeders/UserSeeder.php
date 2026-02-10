@@ -77,6 +77,55 @@ class UserSeeder extends Seeder
             'role_id' => $mesinRole->id,
         ]);
 
+        User::create([
+            'name' => 'TORA',
+            'email' => 'tora@mesin',
+            'password' => Hash::make('mesin'),
+            'role_id' => $mesinRole->id,
+        ]);
+
+        User::create([
+            'name' => 'SANTOSO',
+            'email' => 'santoso@mesin',
+            'password' => Hash::make('mesin'),
+            'role_id' => $mesinRole->id,
+        ]);
+
+        User::create([
+            'name' => 'PRADNYAN',
+            'email' => 'pradnyan@mesin',
+            'password' => Hash::make('mesin'),
+            'role_id' => $mesinRole->id,
+        ]);
+
+        User::create([
+            'name' => 'RIAWAN',
+            'email' => 'riawan@mesin',
+            'password' => Hash::make('mesin'),
+            'role_id' => $mesinRole->id,
+        ]);
+
+        User::create([
+            'name' => 'ABIYOSO',
+            'email' => 'abiyoso@mesin',
+            'password' => Hash::make('mesin'),
+            'role_id' => $mesinRole->id,
+        ]);
+
+        User::create([
+            'name' => 'RIKI',
+            'email' => 'riki@mesin',
+            'password' => Hash::make('mesin'),
+            'role_id' => $mesinRole->id,
+        ]);
+
+        User::create([
+            'name' => 'CANDRA',
+            'email' => 'candra@mesin',
+            'password' => Hash::make('mesin'),
+            'role_id' => $mesinRole->id,
+        ]);
+
         // Create penjaga users
         User::create([
             'name' => 'SIUS',
