@@ -35,6 +35,13 @@ class MjsSeeder extends Seeder
             'role_type' => 'mesin'
         ]);
 
+        Mjs::create([
+            'nama_post' => 'Post 4',
+            'nomor_urut' => 4,
+            'qr_token' => 'mjs-mesin-0004-0000-0000-000000000004',
+            'role_type' => 'mesin'
+        ]);
+
         // MJS Penjaga - 5 pos
         Mjs::create([
             'nama_post' => 'Post 1',
